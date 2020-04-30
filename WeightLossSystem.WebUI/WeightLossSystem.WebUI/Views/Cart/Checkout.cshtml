@@ -1,0 +1,63 @@
+﻿@model WeightLossSystem.WebUI.Models.DatasForView.ShippingViewModel
+@{
+    ViewBag.Title = "GameStore: форма заказа";
+}
+
+<section><div style="height:150px;"></div></section>
+<h2>CHECKOUT NOW</h2>
+<p>Please enter your contact details and we will immediately send the goods!</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <h3>Personal data</h3>
+    <div class="form-group">
+        <label>Your name:</label>
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <label>Your last name:</label>
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+    </div>
+
+    <h3>Delivery address</h3>
+    foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "LastName" && property.PropertyName != "GiftWrap" && property.PropertyName != "FirstName")
+        {
+            <div class="form-group">
+                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                @Html.ValidationMessage(property.PropertyName, "", new { @class = "text-danger" })
+            </div>
+        }
+    }
+
+    <h3>Options</h3>
+    <div class="checkbox">
+        <label>
+            @Html.EditorFor(x => x.GiftWrap)
+            Use gift wrapping?
+        </label>
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Process order" />
+    </div>
+}
+
+
+@*<script>
+        var SendEmail = function () {
+            $.ajax({
+                type: "Post",
+                url: "/Cart/SendMailToUser",
+                success: function (data) {
+                    alert("Success");
+                }
+            })
+        }
+    </script>*@

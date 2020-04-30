@@ -1,0 +1,42 @@
+﻿@model   IEnumerable<WeightLossSystem.WebUI.Models.CategoryViewModel>
+
+@{
+    ViewBag.Title = "DisplayCategory";
+}
+
+    <main class="container">
+        @section Header
+            {
+                <header class="masthead" style="background-image: url('../Content/img/home-bg2.jpg')">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-10 mx-auto">
+                                <div class="site-heading">
+                                    <h1>GoodLife</h1>
+                                    <span class="subheading">Here you can purchase various sports supplements. And also find the article you need for a healthy diet.s</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            }
+        <div class="post-preview">
+            @foreach (var itemCateg in Model)
+            {
+                <a href="~/SportSupplement/DisplaySportSuplement">
+                    <h2 class="post-title">
+                        @Html.DisplayFor(x => itemCateg.Name)
+                    </h2>
+                </a>
+                <h4 class="post-preview">
+                    @Html.DisplayFor(x => itemCateg.Discription)
+                </h4>
+                <a href="~/NutritionBlog/DisplayPage" class="btn btn-primary">Go</a>
+                <p class="post-meta">
+                    Posted by @DateTime.Now.ToString("dd/MM/yyyy")
+                </p>
+            }
+        </div>
+    </main>
+

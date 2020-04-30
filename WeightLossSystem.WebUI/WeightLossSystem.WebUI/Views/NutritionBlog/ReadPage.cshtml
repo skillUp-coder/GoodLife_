@@ -1,0 +1,15 @@
+﻿@model WeightLossSystem.WebUI.Models.DatasForView.NutritionBlogViewModel
+@{
+    ViewBag.Title = "ReadPage";
+}
+
+    <main>
+        <section><div style="height:150px;"></div></section>
+        <h2 class="post-title">@Model.Title<br /></h2>
+        <hr />
+        <h3 class="post-subtitle">
+            @Html.DisplayFor(x => Model.Text)
+        </h3>
+        <hr />
+    </main>
+

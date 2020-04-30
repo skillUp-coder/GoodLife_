@@ -1,0 +1,33 @@
+﻿@model  WeightLossSystem.WebUI.Models.DatasForView.MenuViewModel
+
+
+@foreach (var link in Model.CategoryNames)
+{
+
+    @Html.RouteLink(link, new
+    {
+        controller = "SportSupplement",
+        action = "DisplaySportSuplement",
+        category = link,
+        page = 1,
+
+    }, new
+    {
+        @class = "btn  btn-default btn-lg " + (link == ViewBag.SelectedCategory ? "btn-primary " : "")
+    })
+}
+
+
+
+@Html.RouteLink("To Cheap", new
+    {
+        controller = "SportSupplement",
+        action = "DisplaySportSuplement",
+        cost = "to-cheap",
+        page = 1,
+
+    }, new
+    {
+        @class = "btn  btn-default btn-lg " + (ViewBag.SelectedCost!=null  ? "btn-primary " : "")
+    })
+

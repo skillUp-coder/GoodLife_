@@ -1,0 +1,10 @@
+﻿@model   WeightLossSystem.BL.Services.CartService
+
+
+    <div class="navbar-right">
+        @Html.ActionLink("Order", "DisplayCart", "Cart", new { @class = "btn btn-default navbar-btn" })
+        <b>Your Cart: </b>
+        @Model.Lines.Sum(x => x.Quantity) goods,
+        @Model.ComputeTotalValue().ToString()
+    </div>
+

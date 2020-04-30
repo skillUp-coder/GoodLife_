@@ -1,0 +1,23 @@
+﻿@model IEnumerable<WeightLossSystem.WebUI.Models.DatasForView.NutritionBlogViewModel>
+@{
+    ViewBag.Title = "DisplayPage";
+}
+
+    <main>
+        <section><div style="height:150px;"></div></section>
+        @foreach (var item in Model)
+        {
+            <h2 class="post-title">@item.Title<br /></h2>
+            <hr />
+            <h3 class="post-subtitle">
+                @Html.DisplayFor(x => item.Description)
+            </h3>
+            <p class="post-meta">Posted by @DateTime.Now.ToString("dd/MM/yyyy") </p>
+            <hr />
+            <br />
+            <a href="~/NutritionBlog/ReadPage/@item.NutritionBlogId" class="btn btn-success">Read</a>        
+        }
+        <section><div style="height:50px;"></div></section>
+
+    </main>
+

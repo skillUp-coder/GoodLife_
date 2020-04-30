@@ -1,0 +1,11 @@
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\WeightLossSystem.Domain.dll.config
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\WeightLossSystem.Domain.dll
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\WeightLossSystem.Domain.pdb
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\EntityFramework.dll
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\EntityFramework.xml
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\obj\Debug\WeightLossSystem.Domain.csprojAssemblyReference.cache
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\obj\Debug\WeightLossSystem.Domain.csproj.CopyComplete
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\obj\Debug\WeightLossSystem.Domain.dll
+C:\Users\0x280\source\repos\WeightLossSystem.WebUI\WeightLossSystem.Domain\obj\Debug\WeightLossSystem.Domain.pdb

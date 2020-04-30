@@ -1,0 +1,50 @@
+﻿@model WeightLossSystem.WebUI.Models.DatasForView.CartViewModel
+@{
+    ViewBag.Title = "DisplayCart";
+}
+
+    <section><div style="height:100px;"></div></section>
+<h2>YOUR CART</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Quantity</th>
+            <th>Goods</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Total price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr>
+                <td class="text-center">@line.Quantity</td>
+                <td class="text-left">@line.SportSupplement.Name</td>
+                <td class="text-right">@line.SportSupplement.Price.ToString("# $")</td>
+                <td class="text-right">
+                    @((line.Quantity * line.SportSupplement.Price).ToString("# $"))
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="~/Cart/RemoveFromCart/@line.SportSupplement.SportSupplementId">Remove</a>
+                </td>  
+            </tr>
+        }
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.Cart.ComputeTotalValue().ToString("# $")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<br />
+<div class="text-center">
+    <a class="btn btn-primary" href="~/SportSupplement/DisplaySportSuplement/">Continue shopping</a>
+    @Html.ActionLink("Checkout", "Checkout", null, new { @class = "btn btn-primary" })
+</div>
+<div class="text-center">
+    
+</div>
